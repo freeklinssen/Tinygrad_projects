@@ -3,16 +3,15 @@ import os
 import sys
 sys.path.append(os.getcwd())
 sys.path.append(os.path.join(os.getcwd(), 'tinygrad'))
-sys.path.insert(1, '/path/to/application/app/folder')
 
 import numpy as np
-from tinygrad.tinygrad.tensor import Tensor
-from tinygrad.tinygrad.nn import BatchNorm2D
-from tinygrad.extra.utils import get_parameters
-from tinygrad.datasets import fetch_mnist
-from tinygrad.extra.training import train, evaluate, sparse_categorical_crossentropy
+from tinygrad.tinygrad.tinygrad.tensor import Tensor
+from tinygrad.tinygrad.tinygrad.nn import BatchNorm2D
+from tinygrad.tinygrad.extra.utils import get_parameters
+from tinygrad.tinygrad.datasets import fetch_mnist
+from tinygrad.tinygrad.extra.training import train, evaluate, sparse_categorical_crossentropy
 import tinygrad.tinygrad.nn.optim as optim
-from tinygrad.extra.augment import augment_img
+from tinygrad.tinygrad.extra.augment import augment_img
 
 
 
@@ -41,6 +40,7 @@ if __name__ == "__main__":
   tensor = Tensor.uniform(5,5)
   print(tensor)
   print('okay')
+  print('ee')
   
   lmbd = 0.00025
   lossfn = lambda out,y: sparse_categorical_crossentropy(out, y) + lmbd*(model.weight1.abs() + model.weight2.abs()).sum()
