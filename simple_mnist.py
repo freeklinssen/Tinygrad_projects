@@ -77,7 +77,6 @@ def train(model, x_train, y_train, optimizer, steps, lossfn,  bs=32):
     numbers = np.random.randint(0, len(x_train), bs)
     x = Tensor(x_train[numbers])
     y = y_train[numbers]
-    
     out = model.forward(x)
     loss = lossfn(out, y)
     optimizer.zero_grad()
@@ -117,6 +116,7 @@ if __name__ == "__main__":
   x_train = x_train[:150].reshape(-1, 28, 28).astype(np.uint8)
   x_test = x_test.reshape(-1, 28, 28).astype(np.uint8)
   y_train = y_train[:150].astype(np.uint8)
+  print(type(y_train))
   y_test = y_test.astype(np.uint8)
   
   lrts = [1e-4, 1e-5]
